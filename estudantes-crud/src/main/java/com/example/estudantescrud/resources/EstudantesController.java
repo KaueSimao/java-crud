@@ -7,7 +7,7 @@ import java.util.List;
 import com.example.estudantescrud.dtos.EstudantesRequest;
 import com.example.estudantescrud.entites.Estudantes;
 import com.example.estudantescrud.services.EstudantesService;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/estudantes")
 public class EstudantesController {
 

@@ -1,8 +1,12 @@
 package com.example.estudantescrud.mappers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.example.estudantescrud.dtos.EstudantesRequest;
 import com.example.estudantescrud.dtos.EstudantesResponse;
 import com.example.estudantescrud.entites.Estudantes;
+
 
 public class EstudantesMapper {
     public static Estudantes toEntity(EstudantesRequest request){
@@ -20,5 +24,10 @@ public class EstudantesMapper {
                 estudantes.getEmail(),
                 estudantes.getRg(),
                 estudantes.getTelefone());
+    }
+    public static List<EstudantesResponse> toDTOList(List<Estudantes> estudantes){
+        return estudantes.stream()
+                .map(EstudantesMapper::toDTO)
+                .collect(Collectors.toList());
     }
 }

@@ -5,7 +5,9 @@ import java.util.List;
 
 
 import com.example.estudantescrud.dtos.EstudantesRequest;
+import com.example.estudantescrud.dtos.EstudantesResponse;
 import com.example.estudantescrud.entites.Estudantes;
+import com.example.estudantescrud.mappers.EstudantesMapper;
 import com.example.estudantescrud.services.EstudantesService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +25,15 @@ public class EstudantesController {
     private EstudantesService service;
 
     @GetMapping
-    public ResponseEntity<List<Estudantes>> getEstudantes() {
+    public ResponseEntity<List<EstudantesResponse>> getEstudantes() {
         var estudantes = this.service.getEstudantes();
-        return ResponseEntity.ok(estudantes);
+        return ResponseEntity.ok(EstudantesMapper.toDTOList(estudantes));
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Estudantes> getEstudante(@PathVariable long id) {
+    public ResponseEntity<EstudantesResponse> getEstudante(@PathVariable long id) {
         var estudantes = this.service.getEstudante(id);
-        return ResponseEntity.ok(estudantes);
+        return ResponseEntity.ok(EstudantesMapper.toDTO(estudantes));
     }
 
     @DeleteMapping("{id}")

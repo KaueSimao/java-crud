@@ -18,7 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/estudantes")
+@RequestMapping("estudantes")
 public class EstudantesController {
 
     @Autowired

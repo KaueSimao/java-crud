@@ -27,7 +27,7 @@ public class EstudantesService {
     public Estudantes getEstudante(long id){
         return this.repository.findById(id).orElseThrow(
 
-                                                () -> new EntityNotFoundException("Estudante not found")
+                                                () -> new EntityNotFoundException("Student not found")
                                             );
 
     }
@@ -41,7 +41,7 @@ public class EstudantesService {
 
         else{
 
-            throw new EntityNotFoundException("Estudante not found");
+            throw new EntityNotFoundException("Student not found");
 
         }
     }
@@ -68,7 +68,4 @@ public class EstudantesService {
         }
     }
 
-
-	public void deleteEstudantes(long id) {
-	}
 }

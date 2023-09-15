@@ -17,16 +17,16 @@ public class Estudantes implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(length = 1024, nullable = false, name = "student_name")
+    @Column(length = 70, nullable = false)
     private String name;
 
-    @Column(length = 1024, nullable = false, name = "student_email")
+    @Column(length = 50, nullable = false)
     private String email;
 
-    @Column(length = 9, nullable = false, name = "student_rg")
+    @Column(length = 9, nullable = false)
     private String rg;
 
-    @Column(length = 11, nullable = false, name = "student_telefone")
+    @Column(length = 11, nullable = false)
     private String telefone;
 
 
